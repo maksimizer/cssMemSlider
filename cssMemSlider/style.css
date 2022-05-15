@@ -18,7 +18,7 @@ body {
 
 .container {
     width: 90%;
-    max-width: 40rem;
+    max-width: 30rem;
 	margin: 1rem auto;
 	overflow: hidden;
 }
@@ -133,4 +133,17 @@ label:active > span {
 #mem3:checked ~ .controls > .labels > .button-3:active > span,
 #mem4:checked ~ .controls > .labels > .button-4:active > span {
 	border-color:  #fff;
+}
+
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 1rem;        
+    }
+
+	.sign {
+		font-size: 1rem;
+        text-align: center;
+	}
 }
