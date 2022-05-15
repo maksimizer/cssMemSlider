@@ -5,12 +5,9 @@
 }
 
 html {
-    font-size: 1.25rem;
-    color: #fff;
-    background:
-    linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
-    linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
-    linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    background: rgb(19, 17, 17);
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
     overflow: hidden;
@@ -22,16 +19,13 @@ body {
 .container {
     width: 90%;
     max-width: 40rem;
-    max-height: 100vh;
 	margin: 1rem auto;
 	overflow: hidden;
-	position: relative;
 }
 
 .slider {
 	display: flex;
 	width: 400%;
-	gap: 0;
 	transition: all 0.5s;
 }
 
@@ -59,4 +53,84 @@ input {
 
 #mem4:checked ~ .slider {
 	transform: translateX(-75%);
+}
+
+.controls {
+    display: flex;
+	justify-content: space-between;
+	gap: 2%;
+    margin-top: 1.5rem;
+}
+
+.sign {
+	height: 0;
+	visibility: hidden;
+	transform: translateX(100%);
+}
+
+.labels {
+	display: flex;
+}
+
+label {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+label:hover {
+	cursor: pointer;
+}
+
+span {
+	display: block;
+	width: 0.8rem;
+	height: 0.8rem;
+	background-color: #71e2fe;
+	border: solid 0.1rem #71e2fe;
+	border-radius: 50%;
+}
+
+label:hover > span {
+	border: solid 0.1rem #fff;
+	background-color: #fff;
+}
+
+label:active > span {
+	border: solid 0.1rem #fff;
+	background-color: #fff;
+}
+
+#mem1:checked ~ .controls > .signs > .sign-1,
+#mem2:checked ~ .controls > .signs > .sign-2,
+#mem3:checked ~ .controls > .signs > .sign-3,
+#mem4:checked ~ .controls > .signs > .sign-4 {
+	height: auto;
+	visibility: visible;
+	transform: translateX(0);
+    transition: 0.5s;
+}
+
+#mem1:checked ~ .controls > .labels > .button-1 > span,
+#mem2:checked ~ .controls > .labels > .button-2 > span,
+#mem3:checked ~ .controls > .labels > .button-3 > span,
+#mem4:checked ~ .controls > .labels > .button-4 > span {
+	border-color:  #71e2fe;
+	background-color: transparent;
+}
+
+#mem1:checked ~ .controls > .labels > .button-1:hover > span,
+#mem2:checked ~ .controls > .labels > .button-2:hover > span,
+#mem3:checked ~ .controls > .labels > .button-3:hover > span,
+#mem4:checked ~ .controls > .labels > .button-4:hover > span {
+	border-color: #fff;
+}
+
+#mem1:checked ~ .controls > .labels > .button-1:active > span,
+#mem2:checked ~ .controls > .labels > .button-2:active > span,
+#mem3:checked ~ .controls > .labels > .button-3:active > span,
+#mem4:checked ~ .controls > .labels > .button-4:active > span {
+	border-color:  #fff;
 }
